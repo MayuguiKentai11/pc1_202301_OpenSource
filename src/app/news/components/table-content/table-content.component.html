@@ -1,0 +1,21 @@
+<mat-table [dataSource]="holidays">
+  <ng-container matColumnDef="holidayName">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let holiday">{{holiday.name}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="holidayDescription">
+    <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+    <mat-cell *matCellDef="let holiday">{{holiday.description}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="holidayDate">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let holiday">{{holiday.date.iso}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="holidayType">
+    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+    <mat-cell *matCellDef="let holiday">{{holiday.type}}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+  <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+</mat-table>
+
